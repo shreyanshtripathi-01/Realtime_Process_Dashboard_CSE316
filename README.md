@@ -3,7 +3,7 @@
 
 **Group Members:**  
 *1. Shraddha Gupta - 12304195 <br>*
-*2. Khushi Gupta - 12303149 <br>*
+*2. Khushi Gupta - 12303449 <br>*
 *3. Shreyansh Tripathi - 12324670 <br>*
 
 ---
