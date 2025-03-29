@@ -1,11 +1,13 @@
 import psutil
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox, filedialog
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import threading
 import time
 from collections import deque
+import subprocess
+from datetime import datetime
 
 # Custom styling
 def setup_styles():
@@ -33,6 +35,17 @@ def setup_styles():
                    foreground="white",
                    padding=10,
                    font=('Helvetica', 10, 'bold'))
+
+class ProcessMonitor:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Process Monitor Dashboard")
+        self.root.geometry("1000x800")
+        self.setup_ui()
+
+    def setup_ui(self):
+        self.root.configure(bg='#1e1e1e')
+        # Additional frame setup for header, info, graphs, and table
 
 # Data collection
 def get_process_data():
