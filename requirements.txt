@@ -1,0 +1,7 @@
+# requirements for Realtime Process Dashboard
+psutil==6.0.0         # System monitoring library
+matplotlib==3.8.4     # Plotting library for graphs
+
+pip install psutil
+pip install matplotlib
+python realtime_process_dashboard.py
