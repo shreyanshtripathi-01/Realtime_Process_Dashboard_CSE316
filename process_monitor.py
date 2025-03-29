@@ -9,6 +9,11 @@ from collections import deque
 import subprocess
 from datetime import datetime
 
+themes = {
+    "dark": {"bg": "#1a1a1a", "fg": "#ffffff", "accent": "#64b5f6"},
+    "light": {"bg": "#f8f9fa", "fg": "#2d3436", "accent": "#1a237e"}
+}
+
 # Custom styling
 def setup_styles():
     style = ttk.Style()
