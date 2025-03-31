@@ -136,6 +136,12 @@ memory_label.pack(side="left", padx=20)
 graph_frame = ttk.Frame(root)
 graph_frame.pack(fill="both", expand=True, padx=10, pady=5)
 
+#per-core CPU graphs
+def setup_graphs(self):
+    self.cpu_history_per_core = [deque(maxlen=50) for _ in range(psutil.cpu_count())]
+    self.graph_mode_var = tk.StringVar(value="overall")
+    tk.Button(self.controls_frame, text="Per-Core", command=lambda: self.graph_mode_var.set("per-core")).pack()
+
 # CPU graph with dark theme
 plt.style.use('dark_background')
 fig, ax = plt.subplots(figsize=(10, 3))
