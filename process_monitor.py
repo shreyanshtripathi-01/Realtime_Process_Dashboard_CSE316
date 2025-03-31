@@ -108,6 +108,12 @@ title_label = ttk.Label(header_frame,
                        background="#1e1e1e")
 title_label.pack(side="left", pady=10)
 
+# Memory usage graph
+def setup_graphs(self):
+    self.fig, (self.ax_cpu, self.ax_mem) = plt.subplots(1, 2, figsize=(12, 3))
+    self.canvas = FigureCanvasTkAgg(self.fig, master=self.graph_frame)
+    self.mem_history = deque(maxlen=50)
+    
 # System info frame
 info_frame = ttk.Frame(root)
 info_frame.pack(fill="x", padx=10, pady=5)
