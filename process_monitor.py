@@ -151,6 +151,11 @@ canvas = FigureCanvasTkAgg(fig, master=graph_frame)
 canvas.get_tk_widget().pack(fill="both", expand=True)
 cpu_history = deque(maxlen=50)
 
+# CPU usage filter
+def setup_filters(self):
+    self.cpu_filter_var = tk.StringVar(value="All")
+    ttk.OptionMenu(self.filter_frame, self.cpu_filter_var, "All", "All", "10", "25", command=self.apply_filters).pack()
+
 # Table frame
 table_frame = ttk.Frame(root)
 table_frame.pack(fill="both", expand=True, padx=10, pady=5)
