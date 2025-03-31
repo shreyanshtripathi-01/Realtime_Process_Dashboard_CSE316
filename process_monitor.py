@@ -40,7 +40,15 @@ def setup_styles():
                    foreground="white",
                    padding=10,
                    font=('Helvetica', 10, 'bold'))
+    
+def setup_header(self):
+    self.theme_btn = tk.Button(self.header_frame, text="🌙", command=self.toggle_theme)
+    self.theme_btn.pack(side='right')
 
+def toggle_theme(self):
+    self.current_theme = "light" if self.current_theme == "dark" else "dark"
+    self.setup_styles()
+    
 class ProcessMonitor:
     def __init__(self, root):
         self.root = root
