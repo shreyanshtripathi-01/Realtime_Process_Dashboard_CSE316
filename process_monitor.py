@@ -75,7 +75,19 @@ def get_process_data():
     except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
         pass
     return processes
-
+    
+def get_process_data(self):
+    processes = {}
+    for proc in psutil.process_iter(['pid', 'name', 'cpu_percent', 'memory_info', 'username', 'create_time']):
+        processes[proc.info['pid']] = {
+            'pid': proc.info['pid'],
+            'name': proc.info['name'],
+            'cpu': proc.info['cpu_percent'],
+            'memory': proc.info['memory_info'].rss / 1024 / 1024,
+            'username': proc.info['username'],
+            'create_time': time.ctime(proc.info['create_time'])
+        }
+    return processes
 # GUI setup
 root = tk.Tk()
 root.title("Process Monitor Dashboard")
