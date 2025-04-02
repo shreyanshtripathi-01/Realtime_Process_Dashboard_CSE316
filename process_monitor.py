@@ -156,6 +156,11 @@ def setup_filters(self):
     self.cpu_filter_var = tk.StringVar(value="All")
     ttk.OptionMenu(self.filter_frame, self.cpu_filter_var, "All", "All", "10", "25", command=self.apply_filters).pack()
 
+# Memory Usage filter
+def setup_filters(self):
+    self.mem_filter_var = tk.StringVar(value="All")
+    ttk.OptionMenu(self.filter_frame, self.mem_filter_var, "All", "All", "50", "100", command=self.apply_filters).pack()
+
 # Table frame
 table_frame = ttk.Frame(root)
 table_frame.pack(fill="both", expand=True, padx=10, pady=5)
