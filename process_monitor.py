@@ -167,6 +167,11 @@ def setup_filters(self):
     self.mem_filter_var = tk.StringVar(value="All")
     ttk.OptionMenu(self.filter_frame, self.mem_filter_var, "All", "All", "50", "100", command=self.apply_filters).pack()
 
+# Implement table sorting
+def setup_process_table(self):
+    for col in self.tree["columns"]:
+        self.tree.heading(col, command=lambda c=col: self.sort_treeview(c, False))
+
 # Table frame
 table_frame = ttk.Frame(root)
 table_frame.pack(fill="both", expand=True, padx=10, pady=5)
