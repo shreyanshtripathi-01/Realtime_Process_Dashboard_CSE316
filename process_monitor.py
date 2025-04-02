@@ -88,6 +88,7 @@ def get_process_data(self):
             'create_time': time.ctime(proc.info['create_time'])
         }
     return processes
+    
 # GUI setup
 root = tk.Tk()
 root.title("Process Monitor Dashboard")
@@ -113,6 +114,11 @@ def setup_graphs(self):
     self.fig, (self.ax_cpu, self.ax_mem) = plt.subplots(1, 2, figsize=(12, 3))
     self.canvas = FigureCanvasTkAgg(self.fig, master=self.graph_frame)
     self.mem_history = deque(maxlen=50)
+
+# Add usage type filter
+def setup_filters(self):
+    self.user_filter_var = tk.StringVar(value="All")
+    ttk.OptionMenu(self.filter_frame, self.user_filter_var, "All", "All", "System", "User", command=self.apply_filters).pack()
     
 # System info frame
 info_frame = ttk.Frame(root)
