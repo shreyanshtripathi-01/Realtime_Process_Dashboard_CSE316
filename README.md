@@ -29,7 +29,7 @@ Built with Python libraries like `psutil`, `Tkinter`, and `Matplotlib`, the dash
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/Real-Time-Process-Monitoring-Dashboard.git
+   git clone https://github.com/shreyanshtripathi-01/Realtime_Process_Dashboard_CSE316.git
    
 2. **Navigate to the Project Directory:**
    cd Real-Time-Process-Monitoring-Dashboard
